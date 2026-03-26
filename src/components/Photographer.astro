@@ -1,5 +1,26 @@
 ---
+import PhotoCard from "../components/PhotoCard.astro";
+import moon from "../assets/BakedGoods/TodayBakes/bb.jpg";
+import sunrise from "../assets/BakedGoods/TodayBakes/cc.png";
+import mountain from "../assets/BakedGoods/TodayBakes/mc.jpg";
 
+const photos = [
+  {
+    image: moon,
+    title: "Moon",
+    alt: "Moon",
+  },
+  {
+    image: sunrise,
+    title: "Chocolate Croissant",
+    alt: "Chocolate Croissant",
+  },
+  {
+    image: mountain,
+    title: "Macadamia Nut Cookie",
+    alt: "Macadamia Nut Cookie",
+  },
+];
 ---
 
 <header class="main-header">
