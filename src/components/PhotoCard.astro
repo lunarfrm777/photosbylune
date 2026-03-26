@@ -25,4 +25,16 @@ const { image, alt, width, src } = Astro.props;
         text-align: center;
         color: black;
     }
+    .photo-card img {
+        width: 100%;
+        object-fit: cover;
+        border: 0.2rem black solid;
+        border-radius: 1rem;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .photo-card img:hover {
+        transform: scale(1.05);
+    }
 </style>
