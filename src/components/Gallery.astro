@@ -1,0 +1,45 @@
+---
+import PhotoCard from "../components/PhotoCard.astro";
+
+const photos = [
+  { src: "/fulls/01.jpg", alt: "Full Moon" },
+  { src: "/fulls/02.jpg", alt: "Sunrise" },
+  { src: "/fulls/03.jpg", alt: "Snowy mountain peak" },
+  { src: "/fulls/04.jpg", alt: "Bright tree in winter" },
+  { src: "/fulls/05.jpg", alt: "Cows grazing" },
+  { src: "/fulls/06.jpg", alt: "CN Tower close up" },
+  { src: "/fulls/07.jpg", alt: "Full Moon" },
+  { src: "/fulls/08.jpg", alt: "Sunrise" },
+  { src: "/fulls/09.jpg", alt: "Snowy mountain peak" },
+  { src: "/fulls/10.jpg", alt: "Bright tree in winter" },
+  { src: "/fulls/11.jpg", alt: "Cows grazing" },
+  { src: "/fulls/12.jpg", alt: "CN Tower close up" },
+];
+---
+
+<div class="grid-gallery">
+  {photos.map((photo) => <PhotoCard {...photo} />)}
+</div>
+
+<style>
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    gap: 1rem;
+    padding: 2rem;
+    background-color: aquamarine;
+  }
+
+  /* responsive */
+  @media (max-width: 900px) {
+    .grid-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
