@@ -1,56 +1,29 @@
 ---
 import PhotoCard from "../components/PhotoCard.astro";
-import moon from "../assets/BakedGoods/TodayBakes/bb.jpg";
-import sunrise from "../assets/BakedGoods/TodayBakes/cc.png";
-import mountain from "../assets/BakedGoods/TodayBakes/mc.jpg";
 
 const photos = [
-  {
-    image: moon,
-    title: "Moon",
-    alt: "Moon",
-  },
-  {
-    image: sunrise,
-    title: "Chocolate Croissant",
-    alt: "Chocolate Croissant",
-  },
-  {
-    image: mountain,
-    title: "Macadamia Nut Cookie",
-    alt: "Macadamia Nut Cookie",
-  },
+  { src: "/fulls/01.jpg", alt: "Moon over the lake at night" },
+  { src: "/fulls/02.jpg", alt: "Sunrise over mountains" },
+  { src: "/fulls/03.jpg", alt: "Snowy mountain peak" },
+  { src: "/fulls/04.jpg", alt: "Moon over the lake at night" },
+  { src: "/fulls/05.jpg", alt: "Sunrise over mountains" },
+  { src: "/fulls/06.jpg", alt: "Snowy mountain peak" },
+  { src: "/fulls/07.jpg", alt: "Moon over the lake at night" },
+  { src: "/fulls/08.jpg", alt: "Sunrise over mountains" },
+  { src: "/fulls/09.jpg", alt: "Snowy mountain peak" },
+  { src: "/fulls/10.jpg", alt: "Moon over the lake at night" },
+  { src: "/fulls/11.jpg", alt: "Sunrise over mountains" },
+  { src: "/fulls/12.jpg", alt: "Snowy mountain peak" },
 ];
 ---
 
-<header class="main-header">
-  <h1>♡ Photos by Lune ♡</h1>
-  <nav class="container">
-    <ul>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<div class="gallery grid grid-cols-3 gap-4">
+  {photos.map((src) => <PhotoCard src={src} alt="Photo" />)}
+</div>
 
-<section id="hero" class="hero">
-  <h2>Moments</h2>
-</section>
-
-<!-- update alt text-->
-<section id="portfolio" class="grid-gallery">
-  <img src="/fulls/01.jpg" alt="Moon Photo" />
-  <img src="/fulls/02.jpg" alt="Photo 2" />
-  <img src="/fulls/03.jpg" alt="Photo 3" />
-  <img src="/fulls/04.jpg" alt="Photo 1" />
-  <img src="/fulls/05.jpg" alt="Photo 1" />
-  <img src="/fulls/06.jpg" alt="Photo 2" />
-  <img src="/fulls/07.jpg" alt="Photo 3" />
-  <img src="/fulls/08.jpg" alt="Photo 1" />
-  <img src="/fulls/09.jpg" alt="Photo 2" />
-  <img src="/fulls/10.jpg" alt="Photo 3" />
-</section>
+<div class="container">
+  {photos.map((photo) => <PhotoCard {...photo} />)}
+</div>
 
 <div class="about-contact-wrapper">
   <section id="about" class="about-contact">
