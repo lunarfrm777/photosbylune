@@ -3,9 +3,7 @@ const { image, alt, width, src } = Astro.props;
 ---
 
 <div class="bordered">
-    <a href={src} class="photo-card">
-        <img src={image} alt={alt} width={200} height={200} />
-    </a>
+    <img src={src} alt={alt} width={200} height={200} />
 </div>
 
 <style>
@@ -25,8 +23,10 @@ const { image, alt, width, src } = Astro.props;
         text-align: center;
         color: black;
     }
+
     .photo-card img {
         width: 100%;
+        aspect-ratio: 4 / 3;
         object-fit: cover;
         border: 0.2rem black solid;
         border-radius: 1rem;
