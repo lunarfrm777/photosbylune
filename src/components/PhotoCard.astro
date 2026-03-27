@@ -17,9 +17,10 @@ const { src, alt } = Astro.props;
 
     .photo-card img {
         display: block;
+        /* grid-template-columns: 2fr, auto; */
         width: 100%;
-        aspect-ratio: 4 / 3; /* keeps images proportional */
-        object-fit: contain; /* no cropping */
+        height: auto;
+        object-fit: cover;
         border: 0.2rem solid black;
         border-radius: 1rem;
         transition: transform 0.3s;
