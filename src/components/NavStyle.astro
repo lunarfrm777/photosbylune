@@ -1,0 +1,38 @@
+<nav class="container">
+    <ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <style>
+        nav.container {
+            display: flex; /* turn nav into flex container */
+            justify-content: center; /* center the items horizontally */
+            align-items: center; /* vertically center items */
+            padding: 1rem 2rem;
+        }
+
+        nav.container ul {
+            display: flex; /* make the list items line up in a row */
+            gap: 2rem; /* spacing between links */
+            list-style: none; /* remove bullets */
+            margin: 0; /* remove default ul margin */
+            padding: 0; /* remove default ul padding */
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #63f753;
+            color: rgb(7, 7, 7);
+            font-size: 3rem;
+        }
+    </style>
+</nav>
