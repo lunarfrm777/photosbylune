@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 // astro.config.mjs
 
 export default defineConfig({
@@ -11,5 +12,7 @@ export default defineConfig({
         ],
       },
     },
+
+    plugins: [tailwindcss()],
   },
 });
