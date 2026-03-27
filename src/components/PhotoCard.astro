@@ -8,16 +8,14 @@ const { src, alt } = Astro.props;
 
 <style>
     .photo-card {
-        display: block; /* block container */
-        width: 100%; /* fills grid cell */
-        text-align: center; /* centers caption */
+        display: block;
         border: 0.2rem solid black;
-        overflow: hidden; /* keeps rounded corners tidy */
+        /* keeps rounded corners tidy specifically when user hovers!! */
+        overflow: hidden;
     }
 
     .photo-card img {
         display: block;
-        /* grid-template-columns: 2fr, auto; */
         width: 100%;
         height: auto;
         object-fit: cover;
