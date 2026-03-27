@@ -1,13 +1,46 @@
 <footer>
-    <p>© Photos by Lune</p>
-</footer>
+    <nav class="container">
+        <ul>
+            <li><p>© Photos by Lune</p></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<style>
-    footer {
-        grid-column: 1 / -1; /* span both columns */
-        text-align: center;
-        padding: 1rem;
-        background-color: #111;
-        color: white;
-    }
-</style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        footer {
+            grid-column: 1 / -1; /* span both columns */
+            text-align: center;
+            padding: 1rem;
+            background-color: #111;
+            color: white;
+        }
+
+        nav.container {
+            display: flex; /* turn nav into flex container */
+            justify-content: center; /* center the items horizontally */
+            align-items: center; /* vertically center items */
+            padding: 1rem 2rem;
+        }
+
+        nav.container ul {
+            display: flex; /* make the list items line up in a row */
+            gap: 2rem; /* spacing between links */
+            list-style: none; /* remove bullets */
+            margin: 0; /* remove default ul margin */
+            padding: 0; /* remove default ul padding */
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</footer>
