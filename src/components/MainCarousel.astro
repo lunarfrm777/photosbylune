@@ -56,6 +56,14 @@
         padding: 1rem;
         background-image: linear-gradient(to right, #b65eba, #f869d5);
         border: 1px solid black;
+
+        /* 🔥 hide scrollbar but keep scroll */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
     }
 
     .carousel-item {
