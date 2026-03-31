@@ -68,6 +68,44 @@
     </div>
 </section>
 
+<!-- for user to be able to scroll through based off of cursor pointing on the carousel,, dragging and using the trackpad -->
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const carousel = document.querySelector(".carousel");
+
+        if (!carousel) return; // safety check
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        carousel.addEventListener("mousedown", (e) => {
+            isDown = true;
+            carousel.classList.add("active");
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener("mouseleave", () => {
+            isDown = false;
+            carousel.classList.remove("active");
+        });
+
+        carousel.addEventListener("mouseup", () => {
+            isDown = false;
+            carousel.classList.remove("active");
+        });
+
+        carousel.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+    });
+</script>
+
 <style>
     .carousel {
         display: flex;
@@ -75,16 +113,26 @@
         scroll-snap-type: x mandatory;
         gap: 1rem;
         padding: 1rem;
-        /* background-image: linear-gradient(to right, #b65eba, #f869d5); */
-        box-shadow:
-            0 2px 4px rgba(0, 0, 0, 0.1),
-            0 8px 20px rgba(0, 0, 0, 0.15);
+        background: rgba(186, 58, 153, 0.4); /* deep pink/purple tint */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
 
-        /* 🔥 hide scrollbar but keep scroll */
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE/Edge */
-        background: black;
-        overflow: hidden;
+        /* Shadow & rounded corners for depth */
+        box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.15),
+            0 10px 30px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
+        border-radius: 10px;
+        padding: 1rem;
+        overflow-x: auto; /* allow horizontal scroll */
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch; /* smooth momentum on iOS/mac */
+        cursor: grab; /* optional visual hint */
+        scroll-behavior: smooth;
+    }
+
+    .carousel:active {
+        cursor: grabbing;
     }
 
     .carousel::-webkit-scrollbar {
