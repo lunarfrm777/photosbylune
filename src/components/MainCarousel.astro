@@ -1,8 +1,8 @@
 <section id="hero" class="hero">
     <!-- screen reader will focus to it with tabindex="0" -->
     <div
-        class="carousel rounded-box tabindex="
-        0""
+        class="carousel"
+        tabindex="0"
         aria-label="Photography portfolio carousel"
         id="portfolio">
         <div class="carousel-item">
@@ -68,38 +68,46 @@
     </div>
 </section>
 
-    <style>
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 1rem;
-            padding: 1rem;
-            background-image: linear-gradient(to right, #b65eba, #f869d5);
-            box-shadow:
-                0 2px 4px rgba(0, 0, 0, 0.1),
-                0 8px 20px rgba(0, 0, 0, 0.15);
+<style>
+    .carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 1rem;
+        /* background-image: linear-gradient(to right, #b65eba, #f869d5); */
+        box-shadow:
+            0 2px 4px rgba(0, 0, 0, 0.1),
+            0 8px 20px rgba(0, 0, 0, 0.15);
 
-            /* 🔥 hide scrollbar but keep scroll */
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
-        }
+        /* 🔥 hide scrollbar but keep scroll */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+        background: black;
+        overflow: hidden;
+    }
 
-        .carousel::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
-        }
+    .carousel::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
 
-        .carousel-item {
-            flex: 0 0 auto;
-            width: 100%;
-            max-width: 600px;
-            scroll-snap-align: start;
-        }
+    .carousel-item {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 600px;
+        scroll-snap-align: start;
+    }
 
-        .carousel-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-    </style>
-</section>
+    .carousel-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 2px solid white;
+    }
+
+    .carousel:hover img {
+        transition: transform 0.4s ease;
+        transform: scale(1.01);
+        /* border-radius: 10px; */
+    }
+</style>
