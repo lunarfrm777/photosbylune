@@ -2,24 +2,39 @@
 import NavStyle from "./NavStyle.astro";
 ---
 
-<header class="main-header">
-    <h1>
-        <span aria-hidden="true">♡ </span>
-        Photos by Lune
-        <span aria-hidden="true"> ♡</span>
-    </h1>
-    <NavStyle />
+<header class="main-header" aria-label="">
+    <div class="style-nav" aria-label="styling for entire navbar">
+        <!-- will be updated to logo -->
+        <h1>
+            <span aria-hidden="true">♡ </span>
+            Photos by Lune
+            <span aria-hidden="true"> ♡</span>
+        </h1>
+        <NavStyle />
+    </div>
 </header>
 
 <style>
-    h1 {
-        color: black;
-    }
-    .main-header {
+     .main-header {
         display: flex;
         justify-content: space-between;
         padding: 1rem 2rem;
         background: #ffa9e5f4;
         color: white;
+    }
+
+    .style-nav {
+        background: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    /* will be updated to logo */
+    h1 {
+        text-align:center;
+        color: black;
     }
 </style>
