@@ -2,16 +2,11 @@
 import NavStyle from "./NavStyle.astro";
 ---
 
-<header class="main-header" aria-label="">
+<header class="main-header" aria-label="Main navigation">
     <div class="style-nav" aria-label="styling for entire navbar">
         <!-- will be updated to logo -->
         <a href="/">
-            <h1>
-      
-            <span aria-hidden="true">♡ </span>
-            Photos by Lune
-            <span aria-hidden="true"> ♡</span>
-            </h1>
+          <img src="/Logo.png" alt="Photos by Lune logo" class="logo" />
         </a>
         <NavStyle />
     </div>
@@ -43,5 +38,10 @@ import NavStyle from "./NavStyle.astro";
 
     a {
         text-decoration: none;
+    }
+
+    img{
+        width: 10%;
+        height: 10%;
     }
 </style>
