@@ -1,17 +1,46 @@
 ---
+// Navbar.astro
 import NavStyle from "./NavStyle.astro";
 ---
 
 <header class="main-header" aria-label="Main navigation">
-    <div class="style-nav" aria-label="styling for entire navbar">
-        <!-- will be updated to logo -->
-        <a href="/">
-          <img src="/Logo.png" alt="Photos by Lune logo" class="logo" />
-        </a>
-        <NavStyle />
-    </div>
+    <a href="/">
+        <img src="/Logo.png" alt="Photos by Lune logo" class="logo" />
+    </a>
+    <NavStyle />
 </header>
 
+<style>
+    * {
+        box-sizing: border-box; /* makes padding/margin count inside width */
+    }
+
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* prevent horizontal scroll */
+    }
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+    }
+</style>
+<!-- 
 <style>
      .main-header {
         display: flex;
@@ -20,6 +49,7 @@ import NavStyle from "./NavStyle.astro";
         background: #ffa9e5f4;
         color: white;
     }
+    
 
     .style-nav {
         background: rgba(0, 0, 0, 0.3);
@@ -44,4 +74,5 @@ import NavStyle from "./NavStyle.astro";
         width: 10%;
         height: 10%;
     }
-</style>
+</style> -->
+-->
