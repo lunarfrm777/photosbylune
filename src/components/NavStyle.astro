@@ -1,13 +1,15 @@
 <nav class="container">
-    <ul>
-        <!-- with carousel in Main,, dont need a redirect OH MAYBE IN FOOTER THO -->
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <style>
-        /* nav {
+    <div class="nav-links">
+        <ul>
+            <!-- with carousel in Main,, dont need a redirect OH MAYBE IN FOOTER THO -->
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<style>
+    /* nav {
             background: rgba(0, 0, 0, 0.3);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(14px);
@@ -15,24 +17,49 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         } */
 
-        nav.container {
-            display: flex; /* turn nav into flex container */
-            justify-content: center; /* center the items horizontally */
-            align-items: center; /* vertically center items */
-            padding: 1rem 2rem;
-        }
+    nav.container {
+        display: flex; /* turn nav into flex container */
+        justify-content: center; /* center the items horizontally */
+        align-items: center; /* vertically center items */
+        padding: 1rem 2rem;
+    }
 
-        nav.container ul {
-            display: flex; /* make the list items line up in a row */
-            gap: 2rem; /* spacing between links */
-            list-style: none; /* remove bullets */
-            margin: 0; /* remove default ul margin */
-            padding: 0; /* remove default ul padding */
-        }
+    nav.container ul {
+        display: flex; /* make the list items line up in a row */
+        gap: 2rem; /* spacing between links */
+        list-style: none; /* remove bullets */
+        margin: 0; /* remove default ul margin */
+        padding: 0; /* remove default ul padding */
+    }
 
-        a {
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
-</nav>
+    a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .nav-links a {
+        position: relative;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 1px;
+        background: white;
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: white;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+</style>
