@@ -1,3 +1,7 @@
+---
+
+---
+
 <footer>
     <nav class="container" aria-label="navigation">
         <ul>
@@ -7,45 +11,58 @@
 
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="https://github.com/lunarfrm777">Github</a></li>
-            <li><a href="https://linkedin.com/in/lunem">Linkedin</a></li>
+            <li>
+                <a
+                    href="https://github.com/lunarfrm777"
+                    aria-label="github profile of lune"
+                    ><i class="fa-brands fa-github-alt"></i></a
+                >
+            </li>
+            <li>
+                <a
+                    href="https://linkedin.com/in/lunem"
+                    aria-label="twitter profile of lune"
+                    ><i class="fa-brands fa-linkedin"></i></a
+                >
+            </li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        footer {
-            grid-column: 1 / -1; /* span both columns */
-            text-align: center;
-            padding: 1rem;
-            background-color: #111;
-            color: white;
-        }
-
-        nav.container {
-            display: flex; /* turn nav into flex container */
-            justify-content: center; /* center the items horizontally */
-            align-items: center; /* vertically center items */
-            padding: 1rem 2rem;
-        }
-
-        nav.container ul {
-            display: flex; /* make the list items line up in a row */
-            gap: 2rem; /* spacing between links */
-            list-style: none; /* remove bullets */
-            margin: 0; /* remove default ul margin */
-            padding: 0; /* remove default ul padding */
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-    </style>
 </footer>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    footer {
+        grid-column: 1 / -1; /* span both columns */
+        text-align: center;
+        padding: 1rem;
+        background-color: #111;
+        color: white;
+    }
+
+    nav.container {
+        display: flex; /* turn nav into flex container */
+        justify-content: center; /* center the items horizontally */
+        align-items: center; /* vertically center items */
+        padding: 1rem 2rem;
+    }
+
+    nav.container ul {
+        display: flex; /* make the list items line up in a row */
+        gap: 2rem; /* spacing between links */
+        list-style: none; /* remove bullets */
+        margin: 0; /* remove default ul margin */
+        padding: 0; /* remove default ul padding */
+    }
+
+    ul li,
+    a {
+        color: white;
+        text-decoration: none;
+    }
+</style>

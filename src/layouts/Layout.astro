@@ -5,6 +5,10 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>♡ Photos By Lune ♡</title>
 	</head>
@@ -12,7 +16,22 @@
 		<slot />
 	</body>
 </html>
+<!-- One small accessibility tip: usually emojis or other "non text" unicode characters are kinda bad for screen readers.
 
+Like, when we see this emoji :man_in_business_suit_levitating: it is just like a random dude dressed in business casual. Takes one space only, nothing weird.
+A screen reader will read the actual name of the emoji: man in business suit levitating.
+
+And that... it breaks the flow of text around it making it kinda confusing.
+
+So, suggestions for small pictures/emojis around text:
+
+Use an svg image instead, it also gives you more control over the image to use
+Wrap the emoji in spans
+Avoid scattering emojis throughout the text, mostly leaving them to the end of sentences
+
+
+In the first two cases, you can add an aria-label attribute to the svg or span to describe what that image is in the context of the text around it.
+Or add an aria-hidden="true" to the svg or span to hide the image if it is only for decoration (like an icon next to a word on a menu) -->
 <style>
 	html,
 	body {
