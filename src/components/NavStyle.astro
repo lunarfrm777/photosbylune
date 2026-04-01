@@ -7,14 +7,14 @@
 </nav>
 
 <style>
-    .nav-links-container {
+    .footer-nav .nav-links-container {
         display: flex;
         align-items: center;
         gap: 2rem;
     }
 
     /* nav links horizontal list */
-    .nav-links {
+    .footer-nav .nav-links {
         display: flex;
         gap: 2rem;
         list-style: none;
@@ -23,7 +23,7 @@
     }
 
     /* individual link style + hover underline */
-    .nav-links a {
+    .footer-nav .nav-links a {
         position: relative;
         text-decoration: none;
         font-weight: bold;
@@ -31,7 +31,7 @@
         transition: color 0.3s ease;
     }
 
-    .nav-links a::after {
+    .footer-nav .nav-links a::after {
         content: "";
         position: absolute;
         left: 0;
@@ -42,17 +42,17 @@
         transition: width 0.3s ease;
     }
 
-    .nav-links a:hover {
+    .footer-nav .nav-links a:hover {
         color: #e3eb00;
     }
 
-    .nav-links a:hover::after {
+    .footer-nav .nav-links a:hover::after {
         width: 100%;
     }
 
     /* responsive: stack links under 768px */
     @media (max-width: 768px) {
-        .nav-links {
+        .footer-nav .nav-links {
             flex-direction: column;
             gap: 1rem;
         }
