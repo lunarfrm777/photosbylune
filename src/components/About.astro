@@ -1,12 +1,12 @@
 <div class="about-wrapper">
-    <section class="about" aria-label="About section container">
+    <section class="about-card" aria-label="About section container">
         <h2>About Me</h2>
         <p>
             I love to solve problems, play chess, be in nature, capture's life's
             beautiful moments and continuing to grow! One of my favourite
             animals are turtles!
         </p>
-        <img src="/public/Turtle.jpg" alt="Photo of Green Turtle" />
+        <img src="/Turtle.jpg" alt="Photo of Green Turtle" />
     </section>
 </div>
 
@@ -15,22 +15,22 @@
         background-color: rgb(131, 255, 255);
         display: flex;
         justify-content: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
         align-items: center;
         padding: 4rem 2rem;
     }
-    .about {
+
+    .about-card {
         position: relative;
         display: flex;
         padding-top: 10px;
         flex-direction: column;
         border: 0;
         outline: none;
-        background: linear-gradient(
-            to right,
-            rgba(255, 55, 0, 0.8) 0%,
-            rgb(255, 166, 0) 96%
-        );
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+        background-color: #ff9f6b; /* soft orange */
+        box-shadow:
+            0 10px 25px rgba(255, 140, 80, 0.35),
+            0 0 20px rgba(255, 170, 120, 0.25);
         color: #fff;
         padding: 12px 16px;
         width: 100%;
