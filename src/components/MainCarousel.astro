@@ -100,7 +100,6 @@
 <style>
     .carousel {
         display: flex;
-        overflow-x: auto;
         scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
         gap: 1rem;
@@ -108,29 +107,29 @@
         background: rgba(186, 58, 153, 0.4); /* deep pink/purple tint */
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-
         /* Shadow & rounded corners for depth */
         box-shadow:
             0 4px 15px rgba(0, 0, 0, 0.15),
             0 10px 30px rgba(0, 0, 0, 0.2);
-        /* border-radius: 15px; */
         padding: 1rem;
         overflow-x: auto; /* allow horizontal scroll */
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch; /* smooth momentum on iOS/mac */
-        /* cursor: grab; optional visual hint */
         scroll-behavior: smooth;
+        position: relative;
+        z-index: 1;
     }
 
     .carousel-wrapper {
         position: relative;
         display: flex;
         align-items: center;
+        /* this brings the left arrow back because it was on the edge of the screen due to padding */
+        overflow: visible;
     }
     .arrow {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         background: rgba(63, 27, 68, 0.4); /* soft orange */
         border: none;
         font-size: 2rem;
@@ -141,8 +140,15 @@
         box-shadow: 0 0 15px rgba(91, 46, 98, 0.6);
         transition: all 0.3s ease;
         opacity: 0; /* hidden until hover */
+        z-index: 1000; /* bring to front */
+        transform: translateY(-50%) scale(0.95);
+        transition: all 0.3s ease;
     }
 
+    .carousel-wrapper:hover .arrow,
+    .arrow:hover {
+        opacity: 1;
+    }
     .arrow.left {
         left: 10px;
     }
@@ -153,6 +159,7 @@
     /* Hover glow effect */
     .carousel-wrapper:hover .arrow {
         opacity: 1;
+        transform: translateY(-50%) scale(1);
     }
 
     .arrow:hover {
