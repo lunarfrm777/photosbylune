@@ -3,7 +3,7 @@
 ---
 
 <footer>
-    <nav class="container" aria-label="navigation">
+    <nav class="footer-links-container" aria-label="navigation">
         <ul>
             <a href="/">
                 <li><p>© Photos by Lune</p></li>
@@ -31,38 +31,54 @@
 </footer>
 
 <style>
-    * {
+    .footer-links-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* nav links horizontal list */
+    .footer-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
         margin: 0;
         padding: 0;
-        box-sizing: border-box;
     }
 
-    footer {
-        grid-column: 1 / -1; /* span both columns */
-        text-align: center;
-        padding: 1rem;
-        background-color: #111;
-        color: white;
-    }
-
-    nav.container {
-        display: flex; /* turn nav into flex container */
-        justify-content: center; /* center the items horizontally */
-        align-items: center; /* vertically center items */
-        padding: 1rem 2rem;
-    }
-
-    nav.container ul {
-        display: flex; /* make the list items line up in a row */
-        gap: 2rem; /* spacing between links */
-        list-style: none; /* remove bullets */
-        margin: 0; /* remove default ul margin */
-        padding: 0; /* remove default ul padding */
-    }
-
-    ul li,
-    a {
-        color: white;
+    /* individual link style + hover underline */
+    .footer-links a {
+        position: relative;
         text-decoration: none;
+        font-weight: bold;
+        color: #f36282;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background: rgb(255, 120, 235);
+        transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: #e3eb00;
+    }
+
+    .footer-links a:hover::after {
+        width: 100%;
+    }
+
+    /* responsive: stack links under 768px */
+    @media (max-width: 768px) {
+        .footer-links {
+            flex-direction: column;
+            gap: 1rem;
+        }
     }
 </style>
