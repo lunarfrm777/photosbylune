@@ -6,6 +6,10 @@
 - JavaScript
 - CSS
 
+# What Did I Learn?
+
+
+
 # Next Steps
 - Adding icons to different navigation elements
 - Adding specific photography pages, for example "Moon"
