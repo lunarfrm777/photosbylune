@@ -1,4 +1,4 @@
-<div id="about" class="about-contact">
+<div id="contact" class="contact-container">
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
     <form>
@@ -16,6 +16,15 @@
 </div>
 
 <style>
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 60vh; /* content height */
+    gap: 2rem;
+    background-color: #f6ff00;
+    padding: 2rem;
+    border-radius: 10px;
+  }
   .contact {
     border: 0;
     outline: none;
@@ -35,17 +44,6 @@
     font-weight: 500;
     font-family: "Jost", sans-serif;
     transition: 0.3s;
-  }
-
-  .about-contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 1200px; /* optional max width */
-    height: 60vh; /* content height */
-    gap: 2rem;
-    background-color: #f6ff00;
-    padding: 2rem;
-    border-radius: 10px;
   }
 
   /* Responsive: stack on smaller screens */
