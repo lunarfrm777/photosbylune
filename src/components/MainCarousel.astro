@@ -96,13 +96,13 @@
             carousel.classList.remove("active");
         });
 
-        // carousel.addEventListener("mousemove", (e) => {
-        //     if (!isDown) return;
-        //     e.preventDefault();
-        //     const x = e.pageX - carousel.offsetLeft;
-        //     const walk = (x - startX) * 2; // scroll-fast
-        //     carousel.scrollLeft = scrollLeft - walk;
-        // });
+        carousel.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast
+            carousel.scrollLeft = scrollLeft - walk;
+        });
     });
 </script>
 
