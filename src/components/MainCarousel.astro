@@ -96,13 +96,13 @@
             carousel.classList.remove("active");
         });
 
-        carousel.addEventListener("mousemove", (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 2; // scroll-fast
-            carousel.scrollLeft = scrollLeft - walk;
-        });
+        // carousel.addEventListener("mousemove", (e) => {
+        //     if (!isDown) return;
+        //     e.preventDefault();
+        //     const x = e.pageX - carousel.offsetLeft;
+        //     const walk = (x - startX) * 2; // scroll-fast
+        //     carousel.scrollLeft = scrollLeft - walk;
+        // });
     });
 </script>
 
@@ -126,7 +126,7 @@
         overflow-x: auto; /* allow horizontal scroll */
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch; /* smooth momentum on iOS/mac */
-        cursor: grab; /* optional visual hint */
+        /* cursor: grab; optional visual hint */
         scroll-behavior: smooth;
     }
 
