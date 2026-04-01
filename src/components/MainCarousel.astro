@@ -1,6 +1,9 @@
 <section id="hero" class="hero">
     <div class="carousel-wrapper">
-        <button class="arrow left">❮</button>
+        <button
+            class="arrow left"
+            aria-label="Scrolling left through carousel navigation">❮</button
+        >
         <!-- screen reader will focus to it with tabindex="0" -->
         <div
             class="carousel"
@@ -72,21 +75,26 @@
                 />
             </div>
         </div>
-        <button class="arrow right">❯</button>
+        <button
+            class="arrow right"
+            aria-label="Scrolling right through carousel navigation">❯</button
+        >
     </div>
 </section>
 
-<!-- for user to be able to scroll through based off of cursor pointing on the carousel,, dragging and using the trackpad -->
 <script>
-    const carousel = document.querySelector(".carousel");
+    document.addEventListener("DOMContentLoaded", () => {
+        const carousel = document.querySelector(".carousel");
+        const leftBtn = document.querySelector(".left");
+        const rightBtn = document.querySelector(".right");
 
-    document.querySelector(".left").onclick = () => {
-        carousel.scrollBy({ left: -300, behavior: "smooth" });
-    };
+        if (!carousel || !leftBtn || !rightBtn) return; // safety check
 
-    document.querySelector(".right").onclick = () => {
-        carousel.scrollBy({ left: 300, behavior: "smooth" });
-    };
+        leftBtn.onclick = () =>
+            carousel.scrollBy({ left: -300, behavior: "smooth" });
+        rightBtn.onclick = () =>
+            carousel.scrollBy({ left: 300, behavior: "smooth" });
+    });
 </script>
 
 <style>
@@ -119,7 +127,41 @@
         display: flex;
         align-items: center;
     }
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(63, 27, 68, 0.4); /* soft orange */
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0.5rem 0.8rem;
+        border-radius: 50%;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 0 15px rgba(91, 46, 98, 0.6);
+        transition: all 0.3s ease;
+        opacity: 0; /* hidden until hover */
+    }
 
+    .arrow.left {
+        left: 10px;
+    }
+    .arrow.right {
+        right: 10px;
+    }
+
+    /* Hover glow effect */
+    .carousel-wrapper:hover .arrow {
+        opacity: 1;
+    }
+
+    .arrow:hover {
+        transform: translateY(-50%) scale(1.2);
+        box-shadow: 0 0 25px rgba(59, 19, 59, 0.8);
+        background: rgba(55, 18, 44, 0.6);
+    }
+
+    /*
     .arrow {
         position: absolute;
         background: rgba(255, 255, 255, 0.6);
@@ -130,6 +172,8 @@
         border-radius: 50%;
         backdrop-filter: blur(6px);
         transition: 0.2s;
+        opacity: 0;
+        transition: 0.3s;
     }
 
     .arrow:hover {
@@ -137,17 +181,21 @@
         transform: scale(1.1);
     }
 
-    .arrow .left {
+    .arrow.left {
         left: 10px;
     }
 
-    .arrow .right {
+    .arrow.right {
         right: 10px;
+    }
+
+    .carousel-wrapper:hover .arrow {
+        opacity: 1;
     }
 
     .carousel:active {
         cursor: grabbing;
-    }
+    } */
 
     .carousel::-webkit-scrollbar {
         display: none; /* Chrome/Safari */
