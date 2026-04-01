@@ -77,12 +77,23 @@
 </section>
 
 <!-- for user to be able to scroll through based off of cursor pointing on the carousel,, dragging and using the trackpad -->
-<script></script>
+<script>
+    const carousel = document.querySelector(".carousel");
+
+    document.querySelector(".left").onclick = () => {
+        carousel.scrollBy({ left: -300, behavior: "smooth" });
+    };
+
+    document.querySelector(".right").onclick = () => {
+        carousel.scrollBy({ left: 300, behavior: "smooth" });
+    };
+</script>
 
 <style>
     .carousel {
         display: flex;
         overflow-x: auto;
+        scroll-behavior: smooth;
         scroll-snap-type: x mandatory;
         gap: 1rem;
         padding: 1rem;
@@ -101,6 +112,37 @@
         -webkit-overflow-scrolling: touch; /* smooth momentum on iOS/mac */
         /* cursor: grab; optional visual hint */
         scroll-behavior: smooth;
+    }
+
+    .carousel-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .arrow {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.6);
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0.5rem 0.8rem;
+        border-radius: 50%;
+        backdrop-filter: blur(6px);
+        transition: 0.2s;
+    }
+
+    .arrow:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: scale(1.1);
+    }
+
+    .arrow.left {
+        left: 10px;
+    }
+
+    .arrow.right {
+        right: 10px;
     }
 
     .carousel:active {
