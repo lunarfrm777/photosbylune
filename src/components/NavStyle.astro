@@ -1,3 +1,7 @@
+---
+import Burger from "./Burger.astro";
+---
+
 <header class="main-header">
     <a href="/"><img src="/Logo.png" alt="Logo" class="logo" /></a>
 
@@ -10,28 +14,20 @@
         </ul>
     </nav>
 
-    <!-- burger / mobile links -->
-    <div class="burger">
-        <input type="checkbox" id="check" />
-        <label for="check" class="checkbtn"
-            ><i class="fa-thin fa-burger"></i></label
-        >
-        <ul class="nav-mobile">
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
+    <Burger />
 </header>
 
 <style>
-    .burger {
+    :global(*) {
+        box-sizing: border-box;
+    }
+    /* .burger {
         display: none;
         position: relative;
         height: 10px;
         width: 10px;
         background-color: white;
-    }
+    } */
 
     .main-header {
         display: flex;
@@ -44,7 +40,7 @@
         -webkit-backdrop-filter: blur(14px);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        overflow-x: auto;
+        overflow: auto;
     }
 
     .logo {
@@ -55,7 +51,6 @@
     .nav-links-container {
         display: flex;
         align-items: center;
-        flex-wrap: wrap; /* allows items to go to next line */
         gap: 2rem;
         justify-content: end;
     }
@@ -97,72 +92,5 @@
 
     .nav-links a:hover::after {
         width: 100%;
-    }
-    #check {
-        display: none;
-    }
-    .checkbtn {
-        font-size: 1.5rem;
-        color: white;
-        cursor: pointer;
-        display: none;
-    }
-
-    .nav-mobile {
-        display: none;
-        position: absolute;
-        top: 4.5rem;
-        left: 0;
-        background: #46124b;
-        z-index: 1;
-        width: 200px;
-    }
-
-    #check:checked ~ .nav-mobile {
-        display: block;
-    }
-
-    #check:checked ~ .nav-mobile {
-        display: block;
-    }
-
-    .nav-mobile a {
-        color: #fff;
-        padding: 1rem 1.5rem;
-        display: block;
-    }
-
-    @media screen and (max-width: 625px) {
-        .burger {
-            display: block; /* shows burger on small screens */
-            position: relative;
-        }
-
-        .nav-links-container {
-            display: none; /* hide desktop links */
-        }
-
-        .nav-mobile {
-            display: none; /* hidden by default */
-            position: absolute;
-            top: 100%; /* under header */
-            left: 0;
-            width: 100%;
-            background: #46124b;
-            flex-direction: column;
-            z-index: 10;
-        }
-
-        #check:checked ~ .nav-mobile {
-            display: flex; /* show menu when checkbox checked */
-        }
-
-        .nav-mobile li a {
-            padding: 1.5rem;
-            display: block;
-            font-size: 1.5rem;
-            color: #fff;
-            text-align: center;
-        }
     }
 </style>
