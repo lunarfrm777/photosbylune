@@ -1,12 +1,8 @@
 <!-- burger / mobile links -->
-<div class="nav-wrapper">
-    <div class="burger">
-        <input type="checkbox" id="check" />
-        <label for="check" class="checkbtn"
-            ><i class="fa-solid fa-burger"></i></label
-        >
-    </div>
-    <ul class="nav-mobile">
+<div class="burger">
+    <button id="burger-btn"><i class="fa-solid fa-burger"></i></button>
+
+    <ul class="nav-mobile" id="nav-mobile">
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -16,10 +12,6 @@
     .burger {
         display: none;
         position: relative;
-    }
-
-    #check {
-        display: none;
     }
 
     .checkbtn {
@@ -37,6 +29,8 @@
         left: 0;
         width: 100vw;
         background: #46124b;
+        flex-direction: column;
+        z-index: 10;
     }
 
     /* toggle works because SAME component */
@@ -51,14 +45,23 @@
         }
 
         :global(.nav-links-container) {
-            display: none;
-        }
-
-        .checkbtn {
-            display: block;
+            display: none; /* hide desktop links */
         }
     }
 </style>
+<script>
+    const btn = document.getElementById("burger-btn");
+    const menu = document.getElementById("nav-mobile");
+
+    btn.addEventListener("click", () => {
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    });
+    menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            menu.style.display = "none";
+        });
+    });
+</script>
 <!-- <style>
     body {
         overflow-x: hidden;
