@@ -1,24 +1,61 @@
-<div class="burger">
-    <input type="checkbox" id="check" />
-    <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-    </label>
+<header class="main-header">
+    <a href="/"><img src="/Logo.png" alt="Logo" class="logo" /></a>
 
+    <!-- desktop links -->
     <nav class="nav-links-container">
-        <div class="nav-mobile">
-            <ul class="nav-links">
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+        <ul class="nav-links">
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-</div>
+
+    <!-- burger / mobile links -->
+    <div class="burger">
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">☰</label>
+        <ul class="nav-mobile">
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
 <style>
+    .burger {
+        display: none;
+        position: relative;
+        height: 10px;
+        width: 10px;
+        background-color: white;
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        width: 100%;
+        background: #170312;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        overflow-x: auto;
+    }
+
+    .logo {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+    }
     .nav-links-container {
         display: flex;
         align-items: center;
+        flex-wrap: wrap; /* allows items to go to next line */
         gap: 2rem;
+        justify-content: end;
     }
 
     /* nav links horizontal list */
@@ -93,27 +130,37 @@
         display: block;
     }
 
-    /* hidden by default */
+    @media screen and (max-width: 625px) {
+        .burger {
+            display: block; /* shows burger on small screens */
+            position: relative;
+        }
 
-    @media only screen and (max-width: 625px) {
-        .checkbtn {
-            display: block;
-            font-size: 2rem;
-            position: absolute;
-            top: 30px;
-            left: 40px;
+        .nav-links-container {
+            display: none; /* hide desktop links */
         }
+
         .nav-mobile {
-            top: 160px;
+            display: none; /* hidden by default */
+            position: absolute;
+            top: 100%; /* under header */
+            left: 0;
             width: 100%;
-        }
-        .nav-mobile a {
-            font-size: 2rem;
-            padding: 2rem 3rem;
-        }
-        .nav-links {
+            background: #46124b;
             flex-direction: column;
-            gap: 1rem;
+            z-index: 10;
+        }
+
+        #check:checked ~ .nav-mobile {
+            display: flex; /* show menu when checkbox checked */
+        }
+
+        .nav-mobile li a {
+            padding: 1.5rem;
+            display: block;
+            font-size: 1.5rem;
+            color: #fff;
+            text-align: center;
         }
     }
 </style>
