@@ -1,89 +1,121 @@
 <!-- burger / mobile links -->
-<div class="burger">
-    <input type="checkbox" id="check" />
-    <label for="check" class="checkbtn"><i class="fa-thin fa-burger"></i></label
-    >
+<div class="nav-wrapper">
+    <div class="burger">
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn"
+            ><i class="fa-solid fa-burger"></i></label
+        >
+    </div>
     <ul class="nav-mobile">
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </div>
-
 <style>
     .burger {
         display: none;
         position: relative;
-        height: 10px;
-        width: 10px;
-        background-color: white;
     }
 
     #check {
         display: none;
     }
+
     .checkbtn {
-        font-size: 1.5rem;
-        color: white;
-        cursor: pointer;
         display: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
     }
 
+    /* menu */
     .nav-mobile {
         display: none;
         position: absolute;
-        top: 4.5rem;
+        top: 100%;
         left: 0;
+        width: 100vw;
         background: #46124b;
-        z-index: 1;
-        width: 200px;
     }
 
+    /* toggle works because SAME component */
     #check:checked ~ .nav-mobile {
         display: block;
     }
 
-    #check:checked ~ .nav-mobile {
-        display: block;
-    }
-
-    .nav-mobile a {
-        color: #fff;
-        padding: 1rem 1.5rem;
-        display: block;
-    }
-
+    /* MOBILE */
     @media screen and (max-width: 625px) {
         .burger {
-            display: block; /* shows burger on small screens */
-            position: relative;
-        }
-
-        .nav-links-container {
-            display: none; /* hide desktop links */
-        }
-
-        .nav-mobile {
-            display: none; /* hidden by default */
-            position: absolute;
-            top: 100%; /* under header */
-            left: 0;
-            width: 100%;
-            background: #46124b;
-            flex-direction: column;
-            z-index: 10;
-        }
-
-        #check:checked ~ .nav-mobile {
-            display: flex; /* show menu when checkbox checked */
-        }
-
-        .nav-mobile li a {
-            padding: 1.5rem;
             display: block;
-            font-size: 1.5rem;
-            color: #fff;
-            text-align: center;
+        }
+
+        :global(.nav-links-container) {
+            display: none;
+        }
+
+        .checkbtn {
+            display: block;
         }
     }
 </style>
+<!-- <style>
+    body {
+        overflow-x: hidden;
+    }
+    * default (desktop) */ .burger {
+        display: none;
+        position: relative;
+    }
+
+    #check {
+        display: none;
+    }
+
+    .checkbtn {
+        display: none; /* hidden on desktop */
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* hidden by default */
+    .nav-mobile {
+        display: none;
+    }
+
+    /* toggle */
+    #check:checked ~ .nav-mobile {
+        display: block;
+    }
+
+    /* MOBILE */
+    @media screen and (max-width: 625px) {
+        .burger {
+            display: block;
+            outline: 2px solid red;
+        }
+
+        .nav-links-container {
+            display: none;
+        }
+        .checkbtn {
+            display: block;
+        }
+        .nav-mobile {
+            outline: 2px solid rgb(242, 255, 0);
+            position: absolute;
+            top: 100%; /* directly under burger */
+            left: 0;
+            width: 100%; /* FULL screen width */
+            background: #46124b;
+            z-index: 10;
+        }
+        .nav-mobile a {
+            display: block;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+    }
+</style> -->
