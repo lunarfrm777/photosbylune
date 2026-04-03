@@ -78,10 +78,114 @@
     }
 
     /* responsive: stack links under 768px */
+    ---
+        ---
+        <footer
+        class="footer-nav"
+        > <nav
+        class="footer-links-container"
+        aria-label="Footer navigation"
+        > <ul
+        class="footer-links"
+        > <li
+        > <a
+        href="/"
+        > ©
+        Photos
+        by
+        Lune</a
+        > </li
+        > <li
+        > <a
+        href="https://github.com/lunarfrm777"
+        aria-label="github profile of lune"
+        > <i
+        class="fa-brands fa-github-alt"
+        > </i
+        > </a
+        > </li
+        > <li
+        > <a
+        href="https://linkedin.com/in/lunem"
+        aria-label="twitter profile of lune"
+        > <i
+        class="fa-brands fa-linkedin"
+        > </i
+        > </a
+        > </li
+        > </ul
+        > </nav
+        > </footer
+        > <style
+        > footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+        width: 100%;
+        background: #170312;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links-container {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    /* nav links horizontal list */
+    .footer-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* individual link style + hover underline */
+    .footer-links a {
+        position: relative;
+        text-decoration: none;
+        font-weight: bold;
+        color: #f36282;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background: rgb(255, 120, 235);
+        transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: #e3eb00;
+    }
+
+    .footer-links a:hover::after {
+        width: 100%;
+    }
+
+    /* responsive: stack links under 768px */
+    /* responsive: stack vertically */
     @media (max-width: 768px) {
+        .footer-links-container {
+            flex-direction: column; /* stack container */
+            align-items: center; /* center all items */
+            gap: 1rem; /* space between stacked items */
+        }
+
         .footer-links {
-            flex-direction: column;
+            flex-direction: column; /* stack list items */
             gap: 1rem;
+            align-items: center; /* center links horizontally */
         }
     }
 </style>
