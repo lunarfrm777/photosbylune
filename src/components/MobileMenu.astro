@@ -19,11 +19,16 @@
         height: 50vh;
         backdrop-filter: blur(14px);
         z-index: 9999;
+        transition:
+            transform 0.8s ease,
+            opacity 0.8s ease;
     }
 
     .nav-mobile.open {
         /* allows for js to show li's on clientload in NavBar :0 Astro is sooo cool!! */
         display: block;
+        transform: translateY(0);
+        opacity: 1;
     }
     .nav-mobile li {
         list-style-type: none;
