@@ -1,7 +1,6 @@
 ---
 import NavStyle from "./NavStyle.astro";
 import MobileMenu from "./MobileMenu.astro";
-// import Burger from "./Burger.astro";
 ---
 
 <header class="main-header">
@@ -10,18 +9,11 @@ import MobileMenu from "./MobileMenu.astro";
     <NavStyle />
 
     <!-- ONLY this -->
-    <button id="burger-btn" class="checkbtn">☰</button>
+    <button id="burger-btn"><i class="checkbtn fa-solid fa-burger"></i></button>
 </header>
 
 <!-- mobile menu lives OUTSIDE -->
 <MobileMenu />
-
-<!-- <header class="main-header">
-    <NavStyle />
-    <!-- desktop nav -->
-<!-- </header> -->
-<!-- mobile nav -->
-<!-- <Burger />  -->
 
 <style>
     .main-header {
