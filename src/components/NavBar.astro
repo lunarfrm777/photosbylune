@@ -35,8 +35,11 @@ import MobileMenu from "./MobileMenu.astro";
         width: auto;
         object-fit: contain;
     }
+
     .checkbtn {
         display: none;
+        font-size: 2rem;
+        cursor: pointer;
     }
 
     @media screen and (max-width: 625px) {
@@ -45,3 +48,23 @@ import MobileMenu from "./MobileMenu.astro";
         }
     }
 </style>
+<script client:load>
+    const menu = document.getElementById("nav-mobile");
+    const btn = document.getElementById("burger-btn"); // if using a button elsewhere
+
+    // toggle menu when burger clicked
+    if (btn) {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("open");
+        });
+    }
+
+    // close menu when clicking a link
+    if (menu) {
+        menu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                menu.classList.remove("open");
+            });
+        });
+    }
+</script>
