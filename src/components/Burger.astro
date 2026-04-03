@@ -24,6 +24,7 @@
     /* menu */
     .nav-mobile {
         display: none;
+        padding: 2rem 0;
         position: fixed;
         top: 70px;
         left: 0;
@@ -31,10 +32,15 @@
         z-index: 100;
     }
 
+    .nav-mobile li {
+        list-style-type: none;
+    }
     .nav-mobile a {
+        display: block;
         position: relative;
         text-decoration: none;
-        list-style-type: none;
+        padding: 1.5rem;
+        font-size: 1.8rem;
         font-weight: bold;
         color: #f36282;
         transition: color 0.3s ease;
