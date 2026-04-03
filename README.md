@@ -1,6 +1,7 @@
 # Photos By Lune
 
-
+<img  alt="Desktop Viewport" src="/vp" />
+<img alt="Mobile Responsive" src="/resp" />
 # Technology used
 - Astro
 - JavaScript
