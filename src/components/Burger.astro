@@ -29,11 +29,6 @@
         left: 0;
         width: 100%;
         z-index: 100;
-
-        /* glass effect */
-        background: rgb(255, 225, 0);
-        backdrop-filter: blur(14px);
-        -webkit-backdrop-filter: blur(14px);
     }
 
     .nav-mobile a {
@@ -45,6 +40,24 @@
         transition: color 0.3s ease;
         font-family: "Jost", sans-serif;
         font-size: 14px;
+    }
+    .nav-mobile a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background: rgb(255, 120, 235);
+        transition: width 0.3s ease;
+    }
+
+    .nav-mobile a:hover {
+        color: #e3eb00;
+    }
+
+    .nav-mobile a:hover::after {
+        width: 100%;
     }
 
     /* toggle works because SAME component */
