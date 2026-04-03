@@ -1,14 +1,27 @@
 ---
 import NavStyle from "./NavStyle.astro";
-import Burger from "./Burger.astro";
+import MobileMenu from "./MobileMenu.astro";
+// import Burger from "./Burger.astro";
 ---
 
 <header class="main-header">
+    <a href="/"><img src="/Logo.png" class="logo" /></a>
+
+    <NavStyle />
+
+    <!-- ONLY this -->
+    <button id="burger-btn" class="checkbtn">☰</button>
+</header>
+
+<!-- mobile menu lives OUTSIDE -->
+<MobileMenu />
+
+<!-- <header class="main-header">
     <NavStyle />
     <!-- desktop nav -->
-</header>
+<!-- </header> -->
 <!-- mobile nav -->
-<Burger />
+<!-- <Burger />  -->
 
 <style>
     .main-header {
@@ -24,5 +37,10 @@ import Burger from "./Burger.astro";
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         overflow: auto;
         position: relative;
+    }
+    .logo {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
     }
 </style>
