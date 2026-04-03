@@ -35,4 +35,13 @@ import MobileMenu from "./MobileMenu.astro";
         width: auto;
         object-fit: contain;
     }
+    .checkbtn {
+        display: none;
+    }
+
+    @media screen and (max-width: 625px) {
+        .checkbtn {
+            display: block;
+        }
+    }
 </style>

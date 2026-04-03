@@ -1,17 +1,11 @@
 <!-- burger / mobile links -->
-<div class="burger">
-    <ul class="nav-mobile" id="nav-mobile">
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</div>
-<style>
-    .burger {
-        display: none;
-        position: relative;
-    }
+<ul class="nav-mobile" id="nav-mobile">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
 
+<style>
     .checkbtn {
         display: none;
         font-size: 2rem;
@@ -66,17 +60,8 @@
         width: 100%;
     }
 
-    /* toggle works because SAME component */
-    #check:checked ~ .nav-mobile {
-        display: block;
-    }
-
     /* MOBILE */
     @media screen and (max-width: 625px) {
-        .burger {
-            display: block;
-        }
-
         :global(.nav-links-container) {
             display: none; /* hide desktop links */
         }
