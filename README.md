@@ -1,6 +1,6 @@
 # Photos By Lune
-<img src="/vp.png" alt="Desktop Viewport" width="600">
-<img src="/resp.png" alt="Mobile Responsive" width="300">
+<img width="1916" height="968" alt="vp" src="https://github.com/user-attachments/assets/681df913-1ea6-4aa3-962e-859a5beccffe" />
+<img width="632" height="962" alt="resp" src="https://github.com/user-attachments/assets/916ccb20-5c41-4fb6-9c2d-35a408574c70" />
 
 # Technology used
 - Astro
