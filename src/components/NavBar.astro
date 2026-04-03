@@ -9,7 +9,9 @@ import MobileMenu from "./MobileMenu.astro";
     <NavStyle />
 
     <!-- ONLY this -->
-    <button id="burger-btn"><i class="checkbtn fa-solid fa-burger"></i></button>
+    <label for="check" class="checkbtn" id="burger-btn">
+        <i class="fa-solid fa-burger"></i>
+    </label>
 </header>
 
 <!-- mobile menu lives OUTSIDE -->
@@ -26,7 +28,6 @@ import MobileMenu from "./MobileMenu.astro";
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         overflow: auto;
         position: relative;
     }
@@ -36,12 +37,15 @@ import MobileMenu from "./MobileMenu.astro";
         object-fit: contain;
     }
 
-    .checkbtn {
+    .checkbtn,
+    #burgerbtn {
         display: none;
-        font-size: 2rem;
         cursor: pointer;
     }
 
+    i {
+        color: white;
+    }
     @media screen and (max-width: 625px) {
         .checkbtn {
             display: block;
