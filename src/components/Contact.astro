@@ -18,7 +18,7 @@
 <style>
   .contact-container {
     display: flex;
-    height: 60vh; /* content height */
+    height: 60dvh; /* dvh = dynamic viewport height (modern fix for mobile browsers) */
     gap: 2rem;
     background-color: #f6ff00;
     padding: 2rem;
@@ -39,10 +39,15 @@
     border-radius: 5px;
     margin-top: 25px;
     cursor: pointer;
-    font-size: 14px;
     font-weight: 500;
     font-family: "Jost", sans-serif;
     transition: 0.3s;
+  }
+
+  /* Prevents zoom and stops weird resize */
+  input,
+  textarea {
+    font-size: 16px;
   }
   /* Responsive: stack on smaller screens */
   @media (max-width: 768px) {
