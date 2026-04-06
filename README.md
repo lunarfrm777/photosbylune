@@ -7,11 +7,14 @@
 - JavaScript
 - CSS
 
-# ♡ What Did I Learn? ♡
-- How accessibility with images is based on tags added not Image vs <img>
-- Strengthening semantics practice of when and when not to use aria-label and tabindex=""
-- How using client:load on script allows for classes to go across components during SSR. Without adding this in the script tag,, the JavaScript would only be able to search for the element with specified id, within that specific component. 
-- Further strengthening with z-index, CSS stacking architecture / separation of concerns
+ # Process and What I Learned ♡
+ - Built a fully responsive navigation system with a custom mobile overlay menu.
+ - Solved mobile viewport issues (vh resizing, input zoom on iOS).
+ - Implemented accessible interactions using focus-visible and touch optimizations.
+ - One challenge was handling mobile viewport height issues causing layout shifts. I solved this by replacing vh with dvh and restructuring spacing with margins instead of fixed heights.
+ - Strengthening when to use semantic HTML vs ARIA attributes (for ex. aria-label, tabindex)
+ - I learned how client:load enables JavaScript to run in the browser, allowing interaction across components. Without it, scripts run during SSR and cannot access DOM elements outside their immediate scope.
+ - Improved understanding of z-index, stacking context, and how positioning affects layout. Practiced separating concerns between layout, components, and overlays (e.g. mobile navigation).
 
 # ♡ Next Steps ♡
 - Adding icons to different navigation elements
