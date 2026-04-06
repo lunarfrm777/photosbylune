@@ -120,6 +120,20 @@
         z-index: 1;
     }
 
+    .carousel button,
+    .carousel .arrow {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    /* focus-visible is used to apply styles to an element only when it is focused via keyboard navigation, */
+    button:focus-visible {
+        outline: 2px solid #f36282;
+    }
+
     .carousel-wrapper {
         position: relative;
         display: flex;
